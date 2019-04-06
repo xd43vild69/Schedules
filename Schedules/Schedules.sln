@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "ConsoleApp1\Migrations.csproj", "{0DD839C0-620A-4B36-A85B-DCB1AE9D6D9D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GAP.DOMINIO", "GAP.DOMINIO", "{20C0AC1C-42D9-481C-872C-6D7E75781751}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{F8F0CEE8-F536-4153-A461-C88A4D2B81A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{0DD839C0-620A-4B36-A85B-DCB1AE9D6D9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DD839C0-620A-4B36-A85B-DCB1AE9D6D9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DD839C0-620A-4B36-A85B-DCB1AE9D6D9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F0CEE8-F536-4153-A461-C88A4D2B81A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F0CEE8-F536-4153-A461-C88A4D2B81A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F0CEE8-F536-4153-A461-C88A4D2B81A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F0CEE8-F536-4153-A461-C88A4D2B81A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8F0CEE8-F536-4153-A461-C88A4D2B81A7} = {20C0AC1C-42D9-481C-872C-6D7E75781751}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {26D36533-8CC6-4591-930E-2ACD657B45F3}
