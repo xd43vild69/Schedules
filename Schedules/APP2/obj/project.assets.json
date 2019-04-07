@@ -11810,9 +11810,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\Schedules2\\Schedules\\Schedules\\APP2\\MVC.csproj",
-      "projectName": "MVC",
-      "projectPath": "D:\\Dev\\Schedules2\\Schedules\\Schedules\\APP2\\MVC.csproj",
+      "projectUniqueName": "D:\\Dev\\Schedules2\\Schedules\\Schedules\\APP2\\APP.csproj",
+      "projectName": "APP",
+      "projectPath": "D:\\Dev\\Schedules2\\Schedules\\Schedules\\APP2\\APP.csproj",
       "packagesPath": "C:\\Users\\d13\\.nuget\\packages\\",
       "outputPath": "D:\\Dev\\Schedules2\\Schedules\\Schedules\\APP2\\obj\\",
       "projectStyle": "PackageReference",
