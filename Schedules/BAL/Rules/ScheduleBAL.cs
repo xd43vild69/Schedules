@@ -11,7 +11,7 @@ namespace BAL
     public class ScheduleBAL : IRulesBAL<ScheduleBAL>
     {
         private ScheduleRepository<Schedule> Repository { get; set; }
-        private ScheduleValidation<Schedule> Validations { get; set; }
+        private IValidations<Schedule> Validations { get; set; }
         private int Id { get; set; }
         private Schedule Schedule { get; set; }
         const int HOURSTOCANCEL = 24;
@@ -25,7 +25,12 @@ namespace BAL
         {
             Schedule = (Schedule)entity;
             Repository = new ScheduleRepository<Schedule>();
-            Validations = new ScheduleValidation<Schedule>(); 
+            Validations = new ScheduleValidation<Schedule>();
+        }
+
+        public ScheduleBAL(IValidations<Schedule> validation)
+        {
+            Validations = validation;
         }
 
         public void Delete()

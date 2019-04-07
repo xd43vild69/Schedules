@@ -192,6 +192,7 @@ var PatientSchedule = {
             PatientSchedule.Messages.okPost();
         },
         errorPost(data) {
+            debugger;
             PatientSchedule.Messages.errorServer(data.responseJSON.Message);
         },
         okCancel() {
@@ -228,7 +229,7 @@ var PatientSchedule = {
         },
         postDate(entity) {            
             let urlRootApi = `/Schedule/`;
-            PatientSchedule.Server.callApi(urlRootApi, "POST", PatientSchedule.Business.okPost, PatientSchedule.Server.errorPost, entity);
+            PatientSchedule.Server.callApi(urlRootApi, "POST", PatientSchedule.Business.okPost, PatientSchedule.Business.errorPost, entity);
         },        
         deleteDate(Id) {
             let urlRootApi = `/Schedule/${Id}`;

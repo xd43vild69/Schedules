@@ -1,8 +1,8 @@
-﻿using BAL;
+﻿using System;
+using System.Web.Http;
+using BAL;
 using DTO;
 using Newtonsoft.Json;
-using System;
-using System.Web.Http;
 
 namespace API.Controllers
 {
