@@ -11810,11 +11810,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Dev\\schedules\\Schedules\\Schedules\\APP2\\MVC.csproj",
+      "projectUniqueName": "D:\\Dev\\Schedules2\\Schedules\\Schedules\\APP2\\MVC.csproj",
       "projectName": "MVC",
-      "projectPath": "D:\\Dev\\schedules\\Schedules\\Schedules\\APP2\\MVC.csproj",
+      "projectPath": "D:\\Dev\\Schedules2\\Schedules\\Schedules\\APP2\\MVC.csproj",
       "packagesPath": "C:\\Users\\d13\\.nuget\\packages\\",
-      "outputPath": "D:\\Dev\\schedules\\Schedules\\Schedules\\APP2\\obj\\",
+      "outputPath": "D:\\Dev\\Schedules2\\Schedules\\Schedules\\APP2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

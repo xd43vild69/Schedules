@@ -13,7 +13,7 @@ namespace API
         public static void ConfigureIOC()
         {
             ContainerBuilder builder = new ContainerBuilder();
-            builder.RegisterType<ScheduleIoC>().As<ScheduleIoC>();
+            builder.RegisterType<ScheduleBAL>().As<ScheduleBAL>();
             Container = builder.Build();
         }
 

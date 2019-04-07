@@ -12,3 +12,17 @@ D:\Dev\schedules\Schedules\Schedules\SAL\obj\Debug\SAL.csproj.CoreCompileInputs.
 D:\Dev\schedules\Schedules\Schedules\SAL\obj\Debug\SAL.csproj.CopyComplete
 D:\Dev\schedules\Schedules\Schedules\SAL\obj\Debug\SAL.dll
 D:\Dev\schedules\Schedules\Schedules\SAL\obj\Debug\SAL.pdb
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\SAL.dll.config
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\SAL.dll
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\SAL.pdb
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\DTO.dll
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\EntityFramework.dll
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\DTO.pdb
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\EntityFramework.xml
+D:\Dev\Schedules2\Schedules\Schedules\SAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Dev\Schedules2\Schedules\Schedules\SAL\obj\Debug\SAL.csprojAssemblyReference.cache
+D:\Dev\Schedules2\Schedules\Schedules\SAL\obj\Debug\SAL.csproj.CoreCompileInputs.cache
+D:\Dev\Schedules2\Schedules\Schedules\SAL\obj\Debug\SAL.csproj.CopyComplete
+D:\Dev\Schedules2\Schedules\Schedules\SAL\obj\Debug\SAL.dll
+D:\Dev\Schedules2\Schedules\Schedules\SAL\obj\Debug\SAL.pdb

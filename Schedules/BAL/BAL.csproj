@@ -45,7 +45,6 @@
     <Compile Include="PatientBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScheduleBAL.cs" />
-    <Compile Include="ScheduleIoC.cs" />
     <Compile Include="TypeScheduleBAL.cs" />
   </ItemGroup>
   <ItemGroup>
