@@ -7,7 +7,7 @@ using DTO;
 
 namespace SAL.Context
 {
-    public class RepositoryPatient<T> : IRepositorio<T> where T : Entity, new()
+    public class PatientRepository<T> : IRepositorio<T> where T : Patient, new()
     {
         public void Delete(int id)
         {
@@ -21,7 +21,11 @@ namespace SAL.Context
 
         public IEnumerable<T> GetLists()
         {
-            throw new NotImplementedException();
+            using (var db = new ContextSAL())
+            {
+                var typeList = db.Set<T>().ToList();
+                return typeList;
+            }
         }
 
         public void Insert(T entidad)
