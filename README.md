@@ -26,7 +26,11 @@
 
 ## How to run
 
-1. Execute DB migrations:
+1. Change connectionStrings:
+- GAP.API/API
+- GAP.DATA/Migrations
+
+2. Execute DB migrations:
 - Open Package Manager Console.
 - Select the default GAP.DATA/Migrations as default project.
 - run the command:-
@@ -34,6 +38,6 @@
 					
 					update-database -verbose -force
 
-2. Set up GAP.API/API & GAP.WEB/APP on Multi start projects.
+3. Set up GAP.API/API & GAP.WEB/APP on Multi start projects.
 
 					Run.
