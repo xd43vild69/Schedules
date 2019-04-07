@@ -29,6 +29,7 @@ namespace Test
         {
             // arrange
             bool isValidCancelation = false;
+            DateTime dateTime1 = new DateTime(2019, 4, 7, 13, 0, 0);
             Schedule schedule = new Schedule() { Id = 4, Datebook = System.DateTime.Now, Description = "Desc1", IdPatient = 1 };
             ScheduleBAL scheduleBal = new ScheduleBAL();
 

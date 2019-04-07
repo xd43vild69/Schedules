@@ -22,7 +22,7 @@ namespace SAL.Context
         {
             using (var db = new ContextSAL())
             {
-                return db.Set<T>().FirstOrDefault(x => x.Id == id && x.Datebook <= datebook.AddDays(-1));
+                return db.Set<T>().FirstOrDefault(x => x.Id == id);
             }
         }
     }
