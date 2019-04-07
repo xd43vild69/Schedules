@@ -10,8 +10,10 @@
 	- Migrations EF.
 - GAP.API
 	- API: Web API.
-- GAP.WEB: Application client.
-- GAP.TEST: Unit Test project.	
+- GAP.WEB: 
+	- APP: Application client.
+- GAP.TEST: 
+	- UnitTest: Unit Test project.	
 
 ## TOOLS
 
