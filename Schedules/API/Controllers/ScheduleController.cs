@@ -8,15 +8,22 @@ namespace API.Controllers
 {
     public class ScheduleController : ApiController
     {
-        private ScheduleBAL scheduleBAL { get; set; }
+        private ScheduleBAL ScheduleBAL { get; set; }
+       
+        private Schedule Schedule { get; set; }
+
+        public ScheduleController()
+        {
+            Schedule = new Schedule();
+        }
 
         public IHttpActionResult Get(int id)
         {
             try
             {
-                scheduleBAL = new ScheduleBAL();
-                return Ok(scheduleBAL.GetByIdPatient(id));
-
+                Schedule.Id = id;
+                ScheduleBAL = ConfigIOC.GetInstance<ScheduleBAL>(Schedule);
+                return Ok(ScheduleBAL.Get());
             }
             catch (NullReferenceException ex)
             {
@@ -32,9 +39,9 @@ namespace API.Controllers
         {
             try
             {
-                Schedule schedule = Newtonsoft.Json.JsonConvert.DeserializeObject<Schedule>(postParameters.ToString());
-                scheduleBAL = new ScheduleBAL();
-                scheduleBAL.Insert(schedule);
+                Schedule = JsonConvert.DeserializeObject<Schedule>(postParameters.ToString());
+                ScheduleBAL = ConfigIOC.GetInstance<ScheduleBAL>(Schedule);
+                ScheduleBAL.Insert();
                 return Ok("Ok. Post!");
             }
             catch (ApplicationException ex)
@@ -51,8 +58,9 @@ namespace API.Controllers
         {
             try
             {
-                scheduleBAL = new ScheduleBAL();
-                scheduleBAL.Delete(id);
+                Schedule.Id = id;
+                ScheduleBAL = ConfigIOC.GetInstance<ScheduleBAL>(Schedule);
+                ScheduleBAL.Delete();
                 return Ok("Ok. Delete!");
             }
             catch (ApplicationException ex)

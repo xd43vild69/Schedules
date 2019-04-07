@@ -57,3 +57,6 @@ D:\Dev\schedules\Schedules\Schedules\API\bin\System.Web.Http.Cors.dll
 D:\Dev\schedules\Schedules\Schedules\API\bin\System.Web.Http.Cors.xml
 D:\Dev\schedules\Schedules\Schedules\API\bin\EntityFramework.SqlServer.dll
 D:\Dev\schedules\Schedules\Schedules\API\bin\EntityFramework.SqlServer.xml
+D:\Dev\schedules\Schedules\Schedules\API\bin\Autofac.dll
+D:\Dev\schedules\Schedules\Schedules\API\bin\Autofac.pdb
+D:\Dev\schedules\Schedules\Schedules\API\bin\Autofac.xml

@@ -3,23 +3,23 @@ const urlRootApi = 'http://localhost:51224/api';
 let msg = "";
 
 $(function () {
-    PatientDates.Interface.initUI();
+    PatientSchedule.Interface.initUI();
 });
 
-var PatientDates = {
+var PatientSchedule = {
     Interface: {
         initUI() {
-            PatientDates.Interface.EventsButtons();
-            PatientDates.Interface.loadTypeDates();
-            PatientDates.Interface.loadPatient();
-            PatientDates.Interface.addSelectionList();
+            PatientSchedule.Interface.EventsButtons();
+            PatientSchedule.Interface.loadTypeDates();
+            PatientSchedule.Interface.loadPatient();
+            PatientSchedule.Interface.addSelectionList();
         },
         EventsButtons: function () {
             $('#btnCreate').click(function () {
-                PatientDates.Business.assignment();
+                PatientSchedule.Business.assignment();
             });     
             $('#btnSearch').click(function () {
-                PatientDates.Business.listDates();
+                PatientSchedule.Business.listDates();
             });              
             
             $("#PatientDate").datepicker();
@@ -67,7 +67,7 @@ var PatientDates = {
                             return $("<input>").prop("type", "button")
                                 .val("Cancelar")
                                 .click(function () {
-                                    PatientDates.Business.cancel(item);
+                                    PatientSchedule.Business.cancel(item);
                                 });
                         } 
                     }
@@ -76,10 +76,10 @@ var PatientDates = {
 
         },
         loadTypeDates() {
-            PatientDates.Server.getTypeDate();
+            PatientSchedule.Server.getTypeDate();
         },
         loadPatient() {
-            PatientDates.Server.getPatient();
+            PatientSchedule.Server.getPatient();
         },
         loadSelectInput(data) {
 
@@ -95,7 +95,7 @@ var PatientDates = {
         },
         loadSelectPatient(data) {
 
-            let optionList = PatientDates.Interface.createOptions(data);
+            let optionList = PatientSchedule.Interface.createOptions(data);
 
             $('#patient').selectize({
                 maxItems: 1,
@@ -120,7 +120,7 @@ var PatientDates = {
             return entityList;
         },
         cleanForm() {
-            $("#idPatient").val("");
+            $("#patient").val("");
             $("#datebook").val("");
             $("#description").val("");
             $("#type").val("");
@@ -135,47 +135,47 @@ var PatientDates = {
                 idPatient = -1;
             }
 
-            PatientDates.Server.getDateId(idPatient);
+            PatientSchedule.Server.getDateId(idPatient);
         },
         assignment() {
             
-            if (!PatientDates.Business.isCompleteFieldsFormDates()) {
+            if (!PatientSchedule.Business.isCompleteFieldsFormDates()) {
                 return false;
             }
                         
-            let entity = PatientDates.Business.createEntity();
-            PatientDates.Server.postDate(entity);
+            let entity = PatientSchedule.Business.createEntity();
+            PatientSchedule.Server.postDate(entity);
         },
-        cancel(idDatabook) {
-            let idPatient = $("#idPatient").val();
-            PatientDates.Server.deleteDate(idPatient);
+        cancel(schedule) {
+            debugger;
+            PatientSchedule.Server.deleteDate(schedule.Id);
             console.log("cancel");
         },
         isCompleteFieldsFormDates() {
             let idPatient = $("#idPatient").val();
 
             if (idPatient === '') {
-                PatientDates.Messages.invalidField("Id Paciente");
+                PatientSchedule.Messages.invalidField("Id Paciente");
                 return false;
             }
 
             if ($("#datebook").val() === '') {
-                PatientDates.Messages.invalidField("Fecha Cita");
+                PatientSchedule.Messages.invalidField("Fecha Cita");
                 return false;
             }
             if ($("#type").val() === '-1') {
-                PatientDates.Messages.invalidField("Tipo Cita");
+                PatientSchedule.Messages.invalidField("Tipo Cita");
                 return false;
             }
                        
             return true;
         },
         validationMinimunHoursCancelation() {
-            PatientDates.Messages.invalidMinimunDate();
+            PatientSchedule.Messages.invalidMinimunDate();
             return false;
         },
         validationSameDaySamePatient() {
-            PatientDates.Messages.invalidDateByDay();
+            PatientSchedule.Messages.invalidDateByDay();
             return false;
         },
         createEntity() {                                    
@@ -191,50 +191,51 @@ var PatientDates = {
         },
 
         okPost() {
-            PatientDates.Interface.cleanForm();
-            PatientDates.Messages.okPost();
+            PatientSchedule.Interface.cleanForm();
+            PatientSchedule.Messages.okPost();
         },
         errorPost() {
-            PatientDates.Messages.errorPost();
+            PatientSchedule.Messages.errorPost();
         },
         okCancel() {
-            PatientDates.Messages.okCancel();
+            PatientSchedule.Messages.okCancel();
         },
         errorCancel() {
-            PatientDates.Messages.errorCancel();
+            PatientSchedule.Messages.errorCancel();
+            PatientSchedule.Interface.cleanForm();
         },
         okGet(data) {
-            PatientDates.Interface.datesGrid(data);
-            //PatientDates.Messages.okGet();
+            PatientSchedule.Interface.datesGrid(data);
+            //PatientSchedule.Messages.okGet();
         },
         errorGet() {
-            PatientDates.Messages.errorGet();
+            PatientSchedule.Messages.errorGet();
         }
     },
     Server: {
         getDates() {            
             let urlRootApi = `/Schedule/`;
-            PatientDates.Server.callApi(urlRootApi, "GET", PatientDates.Business.okGet, PatientDates.Business.errorGet, null);
+            PatientSchedule.Server.callApi(urlRootApi, "GET", PatientSchedule.Business.okGet, PatientSchedule.Business.errorGet, null);
         },
         getDateId(idPatient) {
             let urlRootApi = `/Schedule/${idPatient}`;
-            PatientDates.Server.callApi(urlRootApi, "GET", PatientDates.Business.okGet, PatientDates.Business.errorGet, null);
+            PatientSchedule.Server.callApi(urlRootApi, "GET", PatientSchedule.Business.okGet, PatientSchedule.Business.errorGet, null);
         },
         getTypeDate() {
             let urlRootApi = `/TypeSchedule/`;
-            PatientDates.Server.callApi(urlRootApi, "GET", PatientDates.Interface.loadSelectInput, PatientDates.Business.errorGet, null);
+            PatientSchedule.Server.callApi(urlRootApi, "GET", PatientSchedule.Interface.loadSelectInput, PatientSchedule.Business.errorGet, null);
         },
         getPatient() {
             let urlRootApi = `/Patient/`;
-            PatientDates.Server.callApi(urlRootApi, "GET", PatientDates.Interface.loadSelectPatient, PatientDates.Business.errorGet, null);
+            PatientSchedule.Server.callApi(urlRootApi, "GET", PatientSchedule.Interface.loadSelectPatient, PatientSchedule.Business.errorGet, null);
         },
         postDate(entity) {            
             let urlRootApi = `/Schedule/`;
-            PatientDates.Server.callApi(urlRootApi, "POST", PatientDates.Business.okPost, PatientDates.Server.errorPost, entity);
+            PatientSchedule.Server.callApi(urlRootApi, "POST", PatientSchedule.Business.okPost, PatientSchedule.Server.errorPost, entity);
         },        
-        deleteDate(ID) {
-            let urlRootApi = `/Schedule/${idPatient}`;
-            PatientDates.Server.callApi(urlRootApi, "DELETE", PatientDates.Business.okCancel, PatientDates.Business.errorCancel, entity);
+        deleteDate(Id) {
+            let urlRootApi = `/Schedule/${Id}`;
+            PatientSchedule.Server.callApi(urlRootApi, "DELETE", PatientSchedule.Business.okCancel, PatientSchedule.Business.errorCancel, null);
         },
         errorComunication(data) {
             console.log("error connection API");
@@ -258,35 +259,35 @@ var PatientDates = {
     Messages: {        
         okPost() {
             msg = "El ingreso de la cita due realizado exitosamente.";
-            PatientDates.Messages.callMessage();
+            PatientSchedule.Messages.callMessage();
         },
         okCancel() {
-            msg = "La de la cita fue realizada exitosamente.";
-            PatientDates.Messages.callMessage();
+            msg = "La de la cita fue cancelada exitosamente.";
+            PatientSchedule.Messages.callMessage();
         },
         errorPost() {
             msg = "Ocurrio un error en el agendamiento.";
-            PatientDates.Messages.callMessage();
+            PatientSchedule.Messages.callMessage();
         },
         errorCancel() {
             msg = "Ocurrio un error en la cancelación.";
-            PatientDates.Messages.callMessage();
+            PatientSchedule.Messages.callMessage();
         },
         errorGet() {
             msg = "Ocurrio un error en la consulta.";
-            PatientDates.Messages.callMessage();
+            PatientSchedule.Messages.callMessage();
         },
         invalidMinimunDate() {
             msg = "La cita solo se puede cancelar con un minimo de 24 horas de anticipación.";
-            PatientDates.Messages.callMessage();
+            PatientSchedule.Messages.callMessage();
         },
         invalidDateByDay() {
             msg = "El paciente ya cuenta con una cita para esta fecha.";
-            PatientDates.Messages.callMessage();
+            PatientSchedule.Messages.callMessage();
         },
         invalidField(field) {
             msg = `El campo ${field} es requerido.`;
-            PatientDates.Messages.callMessage();
+            PatientSchedule.Messages.callMessage();
         },
         callMessage() {
             //TODO: Implementation component notification.
