@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "PatientDates";
+}
+
+
+<header>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h2 class="display-4">Test .Net Developer </h2>
+            <p class="lead">David Gómez</p>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="form-row top-buffer">
+        <div class="form-group col-md-2">
+            <label for="ID">ID EMPLOYEE:</label>
+        </div>
+        <div class="form-group col-md-2">
+            <input id="idEmployee" class="form-control form-control-lg" type="number" placeholder="Insert the ID">
+        </div>
+        <div class="form-group col-md-3">
+            <button type="button" class="btn btn-primary" id="btnSearch">Search</button>
+        </div>
+    </div>
+    <div class="row top-buffer">
+        <div id="jsGrid"></div>
+    </div>
+</main>
