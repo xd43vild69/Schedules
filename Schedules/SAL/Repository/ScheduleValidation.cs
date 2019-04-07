@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTO;
 
-namespace SAL.Repository
+namespace SAL.Context
 {
     public class ScheduleValidation<T> : IValidations<T> where T : Schedule, new()
     {
@@ -14,7 +14,7 @@ namespace SAL.Repository
         {
             using (var db = new ContextSAL())
             {
-                return db.Set<T>().FirstOrDefault(x => x.Id == id && x.Datebook == datebook);
+                return db.Set<T>().FirstOrDefault(x => x.IdPatient == id && x.Datebook == datebook);
             }
         }
 

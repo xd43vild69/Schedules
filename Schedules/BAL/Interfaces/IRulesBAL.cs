@@ -10,12 +10,13 @@ namespace BAL
     {
         object Get();
 
-
         IEnumerable<object> GetList();
 
         void Delete();
 
         void Insert();
+
+        bool IsValidedCreateSchedule(int id, DateTime datebook);
 
     }
 }

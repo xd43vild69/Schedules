@@ -21,6 +21,8 @@ D:\Dev\schedules\Schedules\Schedules\Test\obj\Debug\Test.csproj.CoreCompileInput
 D:\Dev\schedules\Schedules\Schedules\Test\obj\Debug\Test.csproj.CopyComplete
 D:\Dev\schedules\Schedules\Schedules\Test\obj\Debug\Test.dll
 D:\Dev\schedules\Schedules\Schedules\Test\obj\Debug\Test.pdb
+D:\Dev\Schedules2\Schedules\Schedules\Test\obj\Debug\Test.csprojAssemblyReference.cache
+D:\Dev\Schedules2\Schedules\Schedules\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 D:\Dev\Schedules2\Schedules\Schedules\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 D:\Dev\Schedules2\Schedules\Schedules\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 D:\Dev\Schedules2\Schedules\Schedules\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -39,8 +41,6 @@ D:\Dev\Schedules2\Schedules\Schedules\Test\bin\Debug\Microsoft.VisualStudio.Test
 D:\Dev\Schedules2\Schedules\Schedules\Test\bin\Debug\SAL.pdb
 D:\Dev\Schedules2\Schedules\Schedules\Test\bin\Debug\SAL.dll.config
 D:\Dev\Schedules2\Schedules\Schedules\Test\bin\Debug\EntityFramework.xml
-D:\Dev\Schedules2\Schedules\Schedules\Test\obj\Debug\Test.csprojAssemblyReference.cache
-D:\Dev\Schedules2\Schedules\Schedules\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
 D:\Dev\Schedules2\Schedules\Schedules\Test\obj\Debug\Test.csproj.CopyComplete
 D:\Dev\Schedules2\Schedules\Schedules\Test\obj\Debug\Test.dll
 D:\Dev\Schedules2\Schedules\Schedules\Test\obj\Debug\Test.pdb

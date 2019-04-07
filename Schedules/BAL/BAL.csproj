@@ -41,11 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRulesBAL.cs" />
-    <Compile Include="PatientBAL.cs" />
+    <Compile Include="Interfaces\IRulesBAL.cs" />
+    <Compile Include="Rules\PatientBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScheduleBAL.cs" />
-    <Compile Include="TypeScheduleBAL.cs" />
+    <Compile Include="Rules\ScheduleBAL.cs" />
+    <Compile Include="Rules\ScheduleValidationBAL.cs" />
+    <Compile Include="Rules\TypeScheduleBAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DTO\DTO.csproj">

@@ -258,7 +258,7 @@ var PatientSchedule = {
     },
     Messages: {        
         okPost() {
-            msg = "El ingreso de la cita due realizado exitosamente.";
+            msg = "El ingreso de la cita fue realizado exitosamente.";
             PatientSchedule.Messages.callMessage();
         },
         okCancel() {

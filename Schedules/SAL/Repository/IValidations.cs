@@ -8,7 +8,7 @@ namespace SAL.Context
 {
     interface IValidations<T>
     {
-        T GetSchedulesSameDay(int id);
-        T GetScheduleToCancel(int id);
+        T GetSchedulesSameDay(int id, DateTime datebook);
+        T GetScheduleToCancel(int id, DateTime datebook);
     }
 }

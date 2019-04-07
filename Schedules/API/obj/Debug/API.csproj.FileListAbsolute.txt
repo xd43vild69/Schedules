@@ -60,10 +60,6 @@ D:\Dev\schedules\Schedules\Schedules\API\bin\EntityFramework.SqlServer.xml
 D:\Dev\schedules\Schedules\Schedules\API\bin\Autofac.dll
 D:\Dev\schedules\Schedules\Schedules\API\bin\Autofac.pdb
 D:\Dev\schedules\Schedules\Schedules\API\bin\Autofac.xml
-D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.csprojAssemblyReference.cache
-D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.csproj.CoreCompileInputs.cache
-D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.dll
-D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.pdb
 D:\Dev\Schedules2\Schedules\Schedules\API\bin\API.dll.config
 D:\Dev\Schedules2\Schedules\Schedules\API\bin\API.dll
 D:\Dev\Schedules2\Schedules\Schedules\API\bin\API.pdb
@@ -121,4 +117,8 @@ D:\Dev\Schedules2\Schedules\Schedules\API\bin\System.Web.Http.WebHost.xml
 D:\Dev\Schedules2\Schedules\Schedules\API\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\Dev\Schedules2\Schedules\Schedules\API\bin\SAL.pdb
 D:\Dev\Schedules2\Schedules\Schedules\API\bin\SAL.dll.config
+D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.csprojAssemblyReference.cache
+D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.csproj.CoreCompileInputs.cache
 D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.csproj.CopyComplete
+D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.dll
+D:\Dev\Schedules2\Schedules\Schedules\API\obj\Debug\API.pdb

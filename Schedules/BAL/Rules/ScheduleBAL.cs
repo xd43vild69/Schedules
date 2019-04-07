@@ -11,6 +11,7 @@ namespace BAL
     public class ScheduleBAL : IRulesBAL<ScheduleBAL>
     {
         private ScheduleRepository<Schedule> Repository { get; set; }
+        private ScheduleValidation<Schedule> Validations { get; set; }
         private int Id { get; set; }
         private Schedule Schedule { get; set; }
 
@@ -23,6 +24,7 @@ namespace BAL
         {
             Schedule = (Schedule)entity;
             Repository = new ScheduleRepository<Schedule>();
+            Validations = new ScheduleValidation<Schedule>(); 
         }
 
         public void Delete()
@@ -43,8 +45,24 @@ namespace BAL
 
         public void Insert()
         {
-            //TODO: validation needed before Insert it.
-            Repository.Insert(Schedule);
+            if(IsValidedCreateSchedule(Schedule.IdPatient, Schedule.Datebook))
+            {
+                Repository.Insert(Schedule);
+            }else
+            {
+                throw new ApplicationException("La cita no puede programarse para está fecha.");
+            }
+        }
+
+        public bool IsValidedCreateSchedule(int id, DateTime datebook)
+        {
+            bool isValid = true;
+            var schedulesDay = Validations.GetSchedulesSameDay(id, datebook);
+            if (schedulesDay != null || datebook < System.DateTime.Now)
+            {
+                isValid = false;
+            }
+            return isValid;
         }
     }
 }

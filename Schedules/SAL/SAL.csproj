@@ -51,8 +51,10 @@
     <Compile Include="Context\ContextSAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IValidations.cs" />
     <Compile Include="Repository\ScheduleRepository.cs" />
     <Compile Include="Repository\PatientRepository.cs" />
+    <Compile Include="Repository\ScheduleValidation.cs" />
     <Compile Include="Repository\TypeScheduleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
