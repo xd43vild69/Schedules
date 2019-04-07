@@ -147,7 +147,6 @@ var PatientSchedule = {
             PatientSchedule.Server.postDate(entity);
         },
         cancel(schedule) {
-            debugger;
             PatientSchedule.Server.deleteDate(schedule.Id);
             console.log("cancel");
         },
@@ -180,7 +179,6 @@ var PatientSchedule = {
         },
         createEntity() {                                    
             //entity.type = $("#type").val();  
-            debugger;
             let entity = {
                 IdPatient: $("#patient").val(),
                 datebook: $("#datebook").val(),
@@ -189,20 +187,19 @@ var PatientSchedule = {
             };
             return JSON.stringify(entity);
         },
-
         okPost() {
             PatientSchedule.Interface.cleanForm();
             PatientSchedule.Messages.okPost();
         },
-        errorPost() {
-            PatientSchedule.Messages.errorPost();
+        errorPost(data) {
+            PatientSchedule.Messages.errorServer(data.responseJSON.Message);
         },
         okCancel() {
+            debugger;
             PatientSchedule.Messages.okCancel();
         },
-        errorCancel() {
-            PatientSchedule.Messages.errorCancel();
-            PatientSchedule.Interface.cleanForm();
+        errorCancel(data) {
+            PatientSchedule.Messages.errorServer(data.responseJSON.Message);
         },
         okGet(data) {
             PatientSchedule.Interface.datesGrid(data);
@@ -250,8 +247,9 @@ var PatientSchedule = {
                 success: function (data) {
                     functionApi(data);
                 },
-                error: function () {
-                    functionErrorApi();
+                error: function (data) {
+                    debugger;
+                    functionErrorApi(data);
                 }
             });
         }
@@ -265,16 +263,12 @@ var PatientSchedule = {
             msg = "La de la cita fue cancelada exitosamente.";
             PatientSchedule.Messages.callMessage();
         },
-        errorPost() {
-            msg = "Ocurrio un error en el agendamiento.";
-            PatientSchedule.Messages.callMessage();
-        },
-        errorCancel() {
-            msg = "Ocurrio un error en la cancelación.";
-            PatientSchedule.Messages.callMessage();
-        },
-        errorGet() {
+        errorGet(data) {
             msg = "Ocurrio un error en la consulta.";
+            PatientSchedule.Messages.callMessage();
+        },
+        errorServer(data) {
+            msg = data;
             PatientSchedule.Messages.callMessage();
         },
         invalidMinimunDate() {

@@ -27,11 +27,11 @@ namespace API.Controllers
             }
             catch (NullReferenceException ex)
             {
-                return BadRequest(JsonConvert.SerializeObject(ex.Message));
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest(JsonConvert.SerializeObject(ex.Message));
+                return BadRequest(ex.Message);
             }
 
         }
@@ -46,11 +46,11 @@ namespace API.Controllers
             }
             catch (ApplicationException ex)
             {
-                return BadRequest(JsonConvert.SerializeObject(ex.Message));
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest(JsonConvert.SerializeObject(ex.Message));
+                return BadRequest(ex.Message);
             }
         }
 
@@ -65,11 +65,11 @@ namespace API.Controllers
             }
             catch (ApplicationException ex)
             {
-                return BadRequest(JsonConvert.SerializeObject(ex.Message));
+                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
-                return BadRequest(JsonConvert.SerializeObject(ex.Message));
+                return BadRequest(ex.Message);
             }
         }
     }
