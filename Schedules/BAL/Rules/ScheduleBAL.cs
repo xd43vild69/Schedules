@@ -76,7 +76,11 @@ namespace BAL
         {
             bool isValid = true;
             var schedulesDay = Validations.GetSchedulesSameDay(id, datebook);
-            if (datebook <= System.DateTime.Now )
+            if(schedulesDay == null)
+            {
+                return isValid;
+
+            }else if (datebook < System.DateTime.Now || datebook == schedulesDay.Datebook)
             {
                 isValid = false;
             }

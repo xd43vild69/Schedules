@@ -120,7 +120,7 @@ var PatientSchedule = {
             return entityList;
         },
         cleanForm() {
-            $("#patient").val("");
+            //$("#patient").val("");
             $("#datebook").val("");
             $("#description").val("");
             $("#type").val("");
@@ -192,11 +192,10 @@ var PatientSchedule = {
             PatientSchedule.Messages.okPost();
         },
         errorPost(data) {
-            debugger;
             PatientSchedule.Messages.errorServer(data.responseJSON.Message);
         },
         okCancel() {
-            debugger;
+            PatientSchedule.Business.listDates();
             PatientSchedule.Messages.okCancel();
         },
         errorCancel(data) {
