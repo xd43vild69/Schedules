@@ -41,7 +41,7 @@ namespace BAL
             }
             else
             {
-                throw new ApplicationException("La cita no puede cancelarse.ReglaNegocio2.");
+                throw new ApplicationException("La cita no puede cancelarse. ReglaNegocio2.");
             }
         }
 
@@ -63,7 +63,7 @@ namespace BAL
             }
             else
             {
-                throw new ApplicationException("La cita no puede programarse para está fecha. ReglaNegocio1.");
+                throw new ApplicationException("La cita no puede programarse para esta fecha. ReglaNegocio1.");
             }
         }
 
@@ -75,7 +75,7 @@ namespace BAL
         /// <returns>True when process can continue.</returns>
         public bool IsValidedCreateSchedule(int id, DateTime datebook)
         {
-            if (datebook < DateTime.Now)
+            if (datebook <= DateTime.Now.Date.AddDays(-1))
             {
                 return false;
             }

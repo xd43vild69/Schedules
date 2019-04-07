@@ -35,12 +35,14 @@ var PatientSchedule = {
 
 
         },
-        datesGrid: function (data) {            
+        datesGrid: function (data) {
+            debugger;
+            
             records = data;
             console.log(records);
             $("#jsGrid").jsGrid({
                 width: "100%",
-                height: "200px",
+                height: "300px",
 
                 inserting: false,
                 editing: false,
@@ -50,15 +52,27 @@ var PatientSchedule = {
                 data: records,
                 fields: [
                     //{ type: "control" },
-                    { name: "Id", type: "text", width: 150 },
-                    { name: "Description", type: "text", width: 150 },
+                    { name: "Id", type: "text", width: 15 },
+                    {
+                        name: "Datebook", title: "Fecha", type: "text", width: 50,
+                        itemTemplate: function (value) {
+                            return $("<p>").text($.format.date(value, "yyyy/MM/dd"));
+                        }
+                    },
+                    {
+                        name: "IdTypeDates", title: "Tipo Cita", type: "text", width: 70,
+                        itemTemplate: function (value) {
+                            return $("<p>").text(PatientSchedule.Interface.selectTypeSchedule(value));
+                        }
+                    },
+                    { name: "Description", title: "Descripción", type: "text", width: 150 },
                     {
                         headerTemplate: function () {
-
+                            
                         }
                         , itemTemplate: function (value, item) {
                             return $("<input>").prop("type", "button")
-                                .val("Cancelar")
+                                .val("Cancelar Cita")
                                 .addClass('btn btn-primary')
                                 .click(function () {
                                     PatientSchedule.Business.cancel(item);
@@ -68,6 +82,25 @@ var PatientSchedule = {
                 ]
             });
 
+        },
+        selectTypeSchedule(value) {
+            debugger;
+            let typeSchedule = "";
+            switch (value) {
+                case 1:
+                    typeSchedule = "Medicina General";
+                    break;
+                case 2:
+                    typeSchedule = "Odontología";
+                    break;
+                case 3:
+                    typeSchedule = "Pediatría";
+                    break;
+                case 4:
+                    typeSchedule = "Neurología";
+                    break;
+            }
+            return typeSchedule;
         },
         loadTypeDates() {
             PatientSchedule.Server.getTypeDate();

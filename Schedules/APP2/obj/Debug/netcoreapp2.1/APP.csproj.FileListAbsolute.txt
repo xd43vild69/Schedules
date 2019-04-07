@@ -32,3 +32,4 @@ D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\APP.Views.pdb
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\APP.dll
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\APP.pdb
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\APP.csproj.CopyComplete
+D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\APP.csprojAssemblyReference.cache

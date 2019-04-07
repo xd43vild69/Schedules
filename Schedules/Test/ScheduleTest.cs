@@ -20,20 +20,6 @@ namespace Test
         }
 
         [TestMethod]
-        public void isValidaCreateDatbook()
-        {
-            // arrange
-            bool isValidCreation = false;
-            Schedule schedule = new Schedule() { Id = 4, Datebook = System.DateTime.Now, Description = "Desc1", IdPatient = 1 };
-            ScheduleBAL scheduleBal = new ScheduleBAL();
-
-            // act
-            //isValidCreation = scheduleBal.IsPatientWithDatesSameDay(schedule.IdPatient, schedule.Datebook);
-            // Assert
-            Assert.IsTrue(isValidCreation);
-        }
-
-        [TestMethod]
         public void isNOTaValidaCancelDatabook()
         {
             // arrange
