@@ -80,19 +80,54 @@ namespace Test
         }
 
         [TestMethod]
-        public void InsertTest()
+        public void IsNOTaValidedCreateSchedule()
         {
+            // arrange
 
+            bool isValidCancelation = false;
+
+            DateTime dateTime1 = new DateTime(2019, 4, 7, 13, 0, 0);
             Schedule schedule = new Schedule() { Id = 4, Datebook = System.DateTime.Now, Description = "Desc1", IdPatient = 1 };
             ScheduleBAL scheduleBal = new ScheduleBAL();
-            //scheduleBal.Insert(schedule);
+
+            var moqSet = new Mock<IValidations<Schedule>>();
+
+            var validations = new ScheduleBAL(moqSet.Object);
+            moqSet.Setup(x => x.GetSchedulesSameDay(It.IsAny<int>(), It.IsAny<DateTime>())).Returns(schedule);
+
+            // act
+            isValidCancelation = validations.IsValidedCreateSchedule(schedule.IdPatient, schedule.Datebook);
+
+            // Assert
+            Assert.IsFalse(isValidCancelation);
+        }
+
+        [TestMethod]
+        public void IsValidedCreateSchedule()
+        {
+            // arrange
+
+            bool isValidCancelation = false;
+
+            DateTime dateTime1 = new DateTime(2019, 4, 7, 13, 0, 0);
+            Schedule schedule = new Schedule() { Id = 4, Datebook = System.DateTime.Now.AddDays(1), Description = "Desc1", IdPatient = 1 };
+            ScheduleBAL scheduleBal = new ScheduleBAL();
+
+            var moqSet = new Mock<IValidations<Schedule>>();
+
+            var validations = new ScheduleBAL(moqSet.Object);
+            moqSet.Setup(x => x.GetSchedulesSameDay(It.IsAny<int>(), It.IsAny<DateTime>())).Returns(schedule);
+
+            // act
+            isValidCancelation = validations.IsValidedCreateSchedule(schedule.IdPatient, schedule.Datebook);
+
+            // Assert
+            Assert.IsFalse(isValidCancelation);
         }
 
         public void ConfigTest()
         {
             ConfigIOC.ConfigureIOC();
-            //Patient = new DTO.Patient { Id = 1, Name = "Patient1" };
-            //Schedule = new DTO.Dates { Id = 1, Description = "Desc1", Datebook = System.DateTime.Now.AddDays(-1) };
         }
 
     }
