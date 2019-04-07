@@ -13,9 +13,11 @@
 - GAP.WEB: Application client.
 - GAP.TEST: Unit Test project.	
 
+## TOOLS
 
 - .NET Framework BACKEND : API - DAL - SAL - DTOS
 - .NET Core 2.1 FRONTEND : APP-WEB 
+- JS - Jquery - CSS - HTML5
 - EntityFramework
 - AutoFac
 - Microsoft SQL Server
