@@ -1,0 +1,2 @@
+D:\Dev\schedules\Schedules\Schedules\API\obj\Debug\API.csprojAssemblyReference.cache
+D:\Dev\schedules\Schedules\Schedules\API\obj\Debug\API.csproj.CoreCompileInputs.cache
