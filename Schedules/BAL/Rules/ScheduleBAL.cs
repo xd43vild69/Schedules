@@ -41,7 +41,7 @@ namespace BAL
             }
             else
             {
-                throw new ApplicationException("La cita no puede cancelarse.");
+                throw new ApplicationException("La cita no puede cancelarse.ReglaNegocio2.");
             }
         }
 
@@ -57,12 +57,13 @@ namespace BAL
 
         public void Insert()
         {
-            if(IsValidedCreateSchedule(Schedule.IdPatient, Schedule.Datebook))
+            if (IsValidedCreateSchedule(Schedule.IdPatient, Schedule.Datebook))
             {
                 Repository.Insert(Schedule);
-            }else
+            }
+            else
             {
-                throw new ApplicationException("La cita no puede programarse para está fecha.");
+                throw new ApplicationException("La cita no puede programarse para está fecha. ReglaNegocio1.");
             }
         }
 
@@ -74,17 +75,21 @@ namespace BAL
         /// <returns>True when process can continue.</returns>
         public bool IsValidedCreateSchedule(int id, DateTime datebook)
         {
-            bool isValid = true;
-            var schedulesDay = Validations.GetSchedulesSameDay(id, datebook);
-            if(schedulesDay == null)
+            if (datebook < DateTime.Now)
             {
-                return isValid;
-
-            }else if (datebook < System.DateTime.Now || datebook == schedulesDay.Datebook)
-            {
-                isValid = false;
+                return false;
             }
-            return isValid;
+            var schedulesDay = Validations.GetSchedulesSameDay(id, datebook);
+            if (schedulesDay == null)
+            {
+                return true;
+
+            }
+            if (datebook == schedulesDay.Datebook)
+            {
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
@@ -96,9 +101,9 @@ namespace BAL
         public bool IsValidToCancel(int id, DateTime datebook)
         {
             bool isValid = true;
-            
+
             var schedules = Validations.GetScheduleToCancel(id, datebook);
-            if (schedules != null && schedules.Datebook.AddHours(-HOURSTOCANCEL) < DateTime.Now) 
+            if (schedules != null && schedules.Datebook.AddHours(-HOURSTOCANCEL) < DateTime.Now)
             {
                 isValid = false;
             }

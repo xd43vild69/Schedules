@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link rel="stylesheet" href="~/css/selectize.css" />
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
+        <link rel="stylesheet" href="~/css/jquery-ui.css">
+        <link rel="stylesheet" href="~/css/jquery-confirm.min.css">
         <link rel="stylesheet" href="~/css/jsgrid.min.css" />
         <link rel="stylesheet" href="~/css/jsgrid-theme.min.css" />
     </environment>
@@ -43,7 +43,6 @@
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/Schedules/List">Listar Citas</a></li>
                     <li><a asp-page="/Schedules/New">Crear Citas</a></li>
-                    <li><a asp-page="/Schedules/Cancel">Cancelar Citas</a></li>
                     <li><a asp-page="/About">About</a></li>
                 </ul>
             </div>
@@ -57,7 +56,7 @@
         <hr />
         <footer class="page-footer font-small blue">
             <div class="footer footer-final">
-                © 2019 - <img src="~/images/html5.png" /> - ASP.NET
+                © 2019 - <img src="~/images/html5.png" /> - .NET-Framework - .NET CORE
             </div>
         </footer>
     </div>
@@ -69,6 +68,7 @@
         <script src="~/js/selectize.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
         <script src="~/js/PatientSchedule.js" asp-append-version="true"></script>
+        <script src="~/js/jquery-confirm.min.js" asp-append-version="true"></script>
         @*<script src="~/js/selectize.js" asp-append-version="true"></script>*@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </environment>

@@ -162,7 +162,6 @@ D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\Razor\Pages\E
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\Razor\Pages\Index.g.cshtml.cs
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\Razor\Pages\PatientDates.g.cshtml.cs
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\Razor\Pages\Privacy.g.cshtml.cs
-D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\Razor\Pages\Schedules\Cancel.g.cshtml.cs
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\Razor\Pages\Schedules\List.g.cshtml.cs
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\Razor\Pages\Schedules\New.g.cshtml.cs
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\Razor\Pages\Shared\_CookieConsentPartial.g.cshtml.cs
@@ -176,4 +175,3 @@ D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\MVC.Views.pdb
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\MVC.dll
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\MVC.pdb
 D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\MVC.csproj.CopyComplete
-D:\Dev\Schedules2\Schedules\Schedules\APP2\obj\Debug\netcoreapp2.1\MVC.csprojAssemblyReference.cache

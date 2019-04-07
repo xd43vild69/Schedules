@@ -38,11 +38,6 @@ var PatientSchedule = {
         datesGrid: function (data) {            
             records = data;
             console.log(records);
-            var countries = [
-                { Description: "1", Id: 0 },
-                { Description: "United States", Id: 1 }
-            ];
-
             $("#jsGrid").jsGrid({
                 width: "100%",
                 height: "200px",
@@ -52,9 +47,7 @@ var PatientSchedule = {
                 sorting: false,
                 paging: false,
                 deleteConfirm: "¿Esta seguro de cancelar la cita?",
-
                 data: records,
-
                 fields: [
                     //{ type: "control" },
                     { name: "Id", type: "text", width: 150 },
@@ -66,6 +59,7 @@ var PatientSchedule = {
                         , itemTemplate: function (value, item) {
                             return $("<input>").prop("type", "button")
                                 .val("Cancelar")
+                                .addClass('btn btn-primary')
                                 .click(function () {
                                     PatientSchedule.Business.cancel(item);
                                 });
@@ -147,7 +141,19 @@ var PatientSchedule = {
             PatientSchedule.Server.postDate(entity);
         },
         cancel(schedule) {
-            PatientSchedule.Server.deleteDate(schedule.Id);
+            $.confirm({
+                title: 'Confirmar!',
+                content: '¿Desea cancelar esta cita?',
+                buttons: {
+                    confirm: function () {
+                        PatientSchedule.Server.deleteDate(schedule.Id);
+                    },
+                    cancel: function () {
+                        //$.alert('Canceled!');
+                    },
+                 }
+            });
+            
             console.log("cancel");
         },
         isCompleteFieldsFormDates() {
@@ -248,7 +254,6 @@ var PatientSchedule = {
                     functionApi(data);
                 },
                 error: function (data) {
-                    debugger;
                     functionErrorApi(data);
                 }
             });
@@ -260,7 +265,7 @@ var PatientSchedule = {
             PatientSchedule.Messages.callMessage();
         },
         okCancel() {
-            msg = "La de la cita fue cancelada exitosamente.";
+            msg = "La cita fue cancelada exitosamente.";
             PatientSchedule.Messages.callMessage();
         },
         errorGet(data) {
@@ -285,7 +290,10 @@ var PatientSchedule = {
         },
         callMessage() {
             //TODO: Implementation component notification.
-            alert(msg);
+            $.alert({
+                title: 'Eureka!',
+                content: msg,
+            });
         }
     }
 };
